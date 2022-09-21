@@ -4,6 +4,9 @@ pipeline {
     stage("build") {
       steps {
         sh """
+        docker login --username rezvialauddin --password-stdin docker@mlops#rezvi#mlops@ 
+        """
+        sh """
           docker build -t hello_there .
         """
       }
